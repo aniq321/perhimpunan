@@ -1,21 +1,21 @@
 <?php
 include 'connection.php';
-if (isset($_POST['TN']) && isset($_POST['TF']) && isset($_POST['TE']) && isset($_POST['TD']) && isset($_POST['AL'])) {
+if (isset($_POST['TF']) && isset($_POST['TN']) && isset($_POST['AL']) && isset($_POST['TE']) && isset($_POST['TD']) && isset($_POST['TP'])) {
+    $nondp = $_POST['TF'];
     $name = $_POST['TN'];
-    $facno = $_POST['TF'];
-    $designation = $_POST['TD'];
-    $alias = $_POST['AL'];
-    $contact = $_POST['TP'];
+    $noic = $_POST['AL'];
+    $class = $_POST['TD'];
+    $nofon = $_POST['TP'];
     $email = $_POST['TE'];
-     $message = "nTry again.";
+     $message = "Successfully Add Student";
      echo "<script type='text/javascript'>alert('$message');</script>";
 } else {
-    $message = "invalid";
+    $message = "invalid !";
     echo "<script type='text/javascript'>alert('$message');</script>";
     die();
 }
-$q = mysqli_query(mysqli_connect("localhost", "root", "", "perhimpunan"), "INSERT INTO student VALUES ('$facno','$name','$alias','$designation','$contact','$email')");
-$sql = "CREATE TABLE " . $facno . " (
+$q = mysqli_query(mysqli_connect("localhost", "root", "", "perhimpunan"), "INSERT INTO student VALUES ('$nondp','$name','$noic','$class','$nofon','$email')");
+$sql = "CREATE TABLE " . $nondp . " (
 day VARCHAR(10) PRIMARY KEY, 
 period1 VARCHAR(30),
 period2 VARCHAR(30),

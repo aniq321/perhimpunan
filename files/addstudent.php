@@ -189,7 +189,7 @@
                             var cell = row.getElementsByTagName("td")[0];
                             var id = cell.innerHTML;
                             var x;
-                            if (confirm("Are You Sure?") == true) {
+                            if (confirm("Are You Sure To Update?") == true) {
                                 window.location.href = "updatestudent.php?student=" + id;
 
                             }
@@ -213,7 +213,7 @@
                             var cell = row.getElementsByTagName("td")[0];
                             var id = cell.innerHTML;
                             var x;
-                            if (confirm("Are You Sure?") == true) {
+                            if (confirm("Are You Sure To Delete?") == true) {
                                 window.location.href = "deletestudent.php?student=" + id;
 
                             }

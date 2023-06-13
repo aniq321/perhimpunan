@@ -1,6 +1,6 @@
 <?php
 include 'connection.php';
-$student = $_GET["work"];
+$work = $_GET["work"];
 if (isset($_POST["update"])) {
     $tarikh = $_POST['tarikh'];
     $doa = $_POST['bacaan_doa'];

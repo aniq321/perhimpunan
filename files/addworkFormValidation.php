@@ -6,10 +6,10 @@ if (isset($_POST['TN']) && isset($_POST['TF']) && isset($_POST['AL']) && isset($
     $buku = $_POST['AL'];
     $senaman = $_POST['TP'];
     $speaking = $_POST['TE'];
-    $message = "nTry again.";
+    $message = "Successfully Add Work";
     echo "<script type='text/javascript'>alert('$message');</script>";
 } else {
-    $message = "invalid";
+    $message = "invalid !";
     echo "<script type='text/javascript'>alert('$message');</script>";
     die();
 }
