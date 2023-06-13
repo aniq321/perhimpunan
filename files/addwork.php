@@ -163,7 +163,7 @@
 
                         };
                     };
-                currentRow.cells[6].onclick = createUpdateHandler(currentRow);
+                currentRow.cells[5].onclick = createUpdateHandler(currentRow);
             }
         }
 
@@ -187,7 +187,7 @@
 
                         };
                     };
-                currentRow.cells[7].onclick = createDeleteHandler(currentRow);
+                currentRow.cells[6].onclick = createDeleteHandler(currentRow);
             }
         }
         

@@ -223,9 +223,6 @@
                 currentRow.cells[7].onclick = createDeleteHandler(currentRow);
             }
         }
-        
-
-
     </script>
 
     <table id=studenttable style="margin-left: 80px">
