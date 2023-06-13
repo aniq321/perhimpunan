@@ -1,17 +1,13 @@
 <?php
 include 'connection.php';
 $id = $_GET['student'];
-$q = mysqli_query(mysqli_connect("localhost", "root", "", "perhimpunan"),
-    "DELETE FROM student WHERE no_ndp = '$id' ");
-$drop = "DROP TABLE " . $id;
+$conn = new mysqli("localhost", "root", "", "perhimpunan");
+$sql = "DELETE FROM student WHERE no_ndp";
 
-$q = mysqli_query(mysqli_connect("localhost", "root", "", "perhimpunan"), $drop);
-if ($drop) {
-
-    header("Location:addstudent.php");
-
-} else {
-    echo 'Error';
-}
+if ($conn->query($sql) === TRUE) {
+    echo "Student Record deleted successfully";
+  } else {
+    echo "Error deleting record: " . $conn->error;
+  }
 ?>
 

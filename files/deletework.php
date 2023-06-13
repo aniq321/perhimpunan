@@ -1,16 +1,12 @@
 <?php
 include 'connection.php';
 $id = $_GET['work'];
-$q = mysqli_query(mysqli_connect("localhost", "root", "", "perhimpunan"),
-    "DELETE FROM work WHERE tarikh = '$id' ");
-$drop = "DROP TABLE " . $id;
+$conn = new mysqli("localhost", "root", "", "perhimpunan");
+$sql = "DELETE FROM work WHERE tarikh";
 
-$q = mysqli_query(mysqli_connect("localhost", "root", "", "perhimpunan"), $drop);
-if ($drop) {
-
-    header("Location:addwork.php");
-
-} else {
-    echo 'Error';
-}
+if ($conn->query($sql) === TRUE) {
+    echo "Work Record deleted successfully";
+  } else {
+    echo "Error deleting record: " . $conn->error;
+  }
 ?>
