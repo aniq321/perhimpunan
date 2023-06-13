@@ -143,6 +143,58 @@
     }
 </script>
 
+<script> 
+           function updateHandlers() {
+            var table = document.getElementById("worktable");
+            var rows = table.getElementsByTagName("tr");
+            for (i = 0; i < rows.length; i++) {
+                var currentRow = table.rows[i];
+                var b = currentRow.getElementsByTagName("td")[0];
+                var createUpdateHandler =
+                    function (row) {
+                        return function () {
+                            var cell = row.getElementsByTagName("td")[0];
+                            var id = cell.innerHTML;
+                            var x;
+                            if (confirm("Are You Sure?") == true) {
+                                window.location.href = "updatework.php?work=" + id;
+
+                            }
+
+                        };
+                    };
+                currentRow.cells[6].onclick = createUpdateHandler(currentRow);
+            }
+        }
+
+
+        function deleteHandlers() {
+            var table = document.getElementById("worktable");
+            var rows = table.getElementsByTagName("tr");
+            for (i = 0; i < rows.length; i++) {
+                var currentRow = table.rows[i];
+                var b = currentRow.getElementsByTagName("td")[0];
+                var createDeleteHandler =
+                    function (row) {
+                        return function () {
+                            var cell = row.getElementsByTagName("td")[0];
+                            var id = cell.innerHTML;
+                            var x;
+                            if (confirm("Are You Sure?") == true) {
+                                window.location.href = "deletework.php?work=" + id;
+
+                            }
+
+                        };
+                    };
+                currentRow.cells[7].onclick = createDeleteHandler(currentRow);
+            }
+        }
+        
+
+
+    </script>
+
 
 <div>
     <br>
@@ -174,6 +226,7 @@
             <th width=350>Bacaan Buku Tatatertib</th>
             <th width="390">Senaman Ringkas</th>
             <th width="400">Public Speaking</th>
+            <th width="40">Update</th> <th width="40">Action</th>
         </tr>
         <tbody>
         <?php
@@ -189,8 +242,14 @@
                     <td>{$row['senaman_ringkas']}</td>
                     <td>{$row['public_speaking']}</td>
                    <td>
+                   <button>Update</button>
+                    </td>
+                    <td><button>Delete</button>
+                    </td>
                     </tr>\n";
         }
+        echo "<script>updateHandlers();</script>";
+        echo "<script>deleteHandlers();</script>";
         ?>
         </tbody>
     </table>

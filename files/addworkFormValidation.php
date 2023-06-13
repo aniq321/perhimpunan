@@ -23,22 +23,22 @@ period4 VARCHAR(30),
 period5 VARCHAR(30),
 period6 VARCHAR(30)
 )";
-mysqli_query(mysqli_connect("localhost", "root", "", "perhimpunan"), $sql);
-$days = array('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday');
-for ($i = 0; $i < 6; $i++) {
-    $day = $days[$i];
-    $sql = "INSERT into " . $facno . " VALUES('$day','','','','','','')";
-    mysqli_query(mysqli_connect("localhost", "root", "", "perhimpunan"), $sql);
-}
-if ($q) {
-    $message = "Teavher added.\\nTry again.";
-    echo "<script type='text/javascript'>alert('$message');</script>";
-    header("Location:addstudent.php");
-} else {
-    $message = "Username and/or Password incorrect.\\nTry again.";
-    echo "<script type='text/javascript'>alert('$message');</script>";
-    // header("Location:index.php");
+// mysqli_query(mysqli_connect("localhost", "root", "", "perhimpunan"), $sql);
+// $days = array('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday');
+// for ($i = 0; $i < 6; $i++) {
+//     $day = $days[$i];
+//     $sql = "INSERT into " . $facno . " VALUES('$day','','','','','','')";
+//     mysqli_query(mysqli_connect("localhost", "root", "", "perhimpunan"), $sql);
+// }
+// if ($q) {
+//     $message = "Teavher added.\\nTry again.";
+//     echo "<script type='text/javascript'>alert('$message');</script>";
+//     header("Location:addstudent.php");
+// } else {
+//     $message = "Username and/or Password incorrect.\\nTry again.";
+//     echo "<script type='text/javascript'>alert('$message');</script>";
+//     // header("Location:index.php");
 
-}
+// }
 
 ?>

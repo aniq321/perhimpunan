@@ -7,7 +7,7 @@ if (isset($_POST['UN']) && isset($_POST['PASS'])) {
 } else {
     die();
 }
-$q = mysqli_query(mysqli_connect("localhost", "root", "", "perhimpunan"), "SELECT nama FROM admin WHERE nama = '$id' and password = '$password' ");
+$q = mysqli_query(mysqli_connect("localhost", "root", "", "perhimpunan"), "SELECT name FROM admin WHERE name = '$id' and password = '$password' ");
 if (mysqli_num_rows($q) == 1) {
     header("Location:addstudent.php");
 } else {
