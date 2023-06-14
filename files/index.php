@@ -1,9 +1,3 @@
-<?php
-if (isset($_GET['generated']) && $_GET['generated'] == "false") {
-    unset($_GET['generated']);
-    echo '<script>alert("Timetable not generated yet!!");</script>';
-}
-?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -139,7 +133,7 @@ if (isset($_GET['generated']) && $_GET['generated'] == "false") {
     }
     studentLoginBtn.onclick = function () {
         modal.style.display = "block";
-        heading.innerHTML = "Faculty Login";
+        heading.innerHTML = "User Login";
         facultyForm.style.display = "block";
         adminForm.style.display = "none";
 
